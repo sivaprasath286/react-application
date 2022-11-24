@@ -7,4 +7,6 @@ before_install:
 
 
 script:
-  - docker run sumitkutty/reactapp npm run test -- --coverage
+  - docker run -e CI=true sumitkutty/reactapp npm run test -- --coverage
+
+language: generic
