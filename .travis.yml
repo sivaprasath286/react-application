@@ -1,0 +1,10 @@
+sudo: required
+services:
+  - docker
+
+before_install:
+  - docker build -t sumitkutty/reactapp -f Dockerfile.dev . 
+
+
+script:
+  - docker run sumitkutty/reactapp npm run test -- --coverage
