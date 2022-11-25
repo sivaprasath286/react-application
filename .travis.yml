@@ -10,3 +10,17 @@ script:
   - docker run -e CI=true sumitkutty/reactapp npm run test -- --coverage
 
 language: generic
+
+deploy:
+  provider: elasticbeanstalk
+  region: "ap-northeast-1" #Change this when you create the instance
+  app: "docker" #change this to your app name that you keep when u create the instance.
+  env: "Docker-env" #Change this when you create the instance
+  bucket_name: "elasticbeanstalk-ap-northeast-1-071330363991" #For this, search 's3'in aws search panel, go to the region where you are and click. Then copy the bucket name and paste here.
+  bucket_path: "docker"  #same as 'app' above.
+  on:
+    branch: main
+  #now we need api keys for access to aws 
+  access_key_id: "$AWS_access_key"
+  secret_access_key: "$AWS_secret_key"
+ 
