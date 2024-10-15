@@ -1,9 +1,0 @@
-# This compose file will be used for production.
-version: '3'
-services:
-  web:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    ports:
-      - '80:80'

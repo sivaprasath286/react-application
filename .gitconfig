@@ -1,0 +1,7 @@
+[user]
+	name = sivaprasath286
+	email = sivaprasath286@gmail.com
+[core]
+	editor = vim
+[diff]
+	tool = vim.diff
